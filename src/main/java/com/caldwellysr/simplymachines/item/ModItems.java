@@ -8,13 +8,11 @@ public class ModItems {
 
   public static ItemBase hellCoal = new FuelItem("hell_coal", 3600).setCreativeTab(CreativeTabs.MISC);
 
-    public static void register(IForgeRegistry<Item> registry) {
-      registry.registerAll(
-          hellCoal
-          );
-    }
+  public static void register(IForgeRegistry<Item> registry) {
+    registry.registerAll(hellCoal);
+  }
 
-  public static void registerModels() {
+  public static void registerItemModels() {
     hellCoal.registerItemModel();
   }
 
