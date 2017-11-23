@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.caldwellysr.simplymachines.proxy.CommonProxy;
 import com.caldwellysr.simplymachines.block.ModBlocks;
+import com.caldwellysr.simplymachines.client.SimplyMachinesTab;
 import com.caldwellysr.simplymachines.item.ModItems;
 
 @Mod(modid = SimplyMachinesMod.modId, name = SimplyMachinesMod.name, version = SimplyMachinesMod.version)
@@ -27,6 +28,8 @@ public class SimplyMachinesMod {
 
   @SidedProxy(serverSide = "com.caldwellysr.simplymachines.proxy.CommonProxy", clientSide = "com.caldwellysr.simplymachines.proxy.ClientProxy")
   public static CommonProxy proxy;
+  
+  public static SimplyMachinesTab creativeTab = new SimplyMachinesTab();
 
   @Mod.EventHandler
   public void preInit(FMLPreInitializationEvent event) {
@@ -35,7 +38,8 @@ public class SimplyMachinesMod {
 
   @Mod.EventHandler
   public void init(FMLInitializationEvent event) {
-
+    ModItems.hellCoal.initOreDict();
+    ModBlocks.oreHellCoal.initOreDict();
   }
 
   @Mod.EventHandler
