@@ -10,8 +10,10 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.caldwellysr.simplymachines.proxy.CommonProxy;
+import com.caldwellysr.simplymachines.world.ModWorldGen;
 import com.caldwellysr.simplymachines.block.ModBlocks;
 import com.caldwellysr.simplymachines.client.SimplyMachinesTab;
 import com.caldwellysr.simplymachines.item.ModItems;
@@ -33,7 +35,7 @@ public class SimplyMachinesMod {
 
   @Mod.EventHandler
   public void preInit(FMLPreInitializationEvent event) {
-
+    GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
   }
 
   @Mod.EventHandler
