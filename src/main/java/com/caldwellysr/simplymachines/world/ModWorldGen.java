@@ -19,7 +19,7 @@ public class ModWorldGen implements IWorldGenerator {
   @Override
   public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
     if (world.provider.getDimension() == -1) { // The Nether
-      generateOre(ModBlocks.oreHellCoal.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 16, 64, 10 + random.nextInt(6), 200);
+      generateOre(ModBlocks.oreHellCoal.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 16, 64, 1 + random.nextInt(6), 20);
     }
   }
   
@@ -31,7 +31,6 @@ public class ModWorldGen implements IWorldGenerator {
     for (int i = 0; i < chances; i++) {
       pos = new BlockPos(x + random.nextInt(16), minY + random.nextInt(deltaY), z + random.nextInt(16));
   
-      System.out.println(pos);
       generator.generate(world, random, pos);
     }
   }
