@@ -2,9 +2,6 @@ package com.caldwellysr.simplymachines.item;
 
 import net.minecraft.item.Item;
 
-import com.caldwellysr.simplymachines.SimplyMachinesMod;
-
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class ModItems {
